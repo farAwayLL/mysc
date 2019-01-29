@@ -1,0 +1,22 @@
+server:
+  port: 9527
+#################################################################
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:9001/eureka/        #网关入驻注册中心
+#################################################################
+spring:
+  application:
+    name: zuul-gateway
+#################################################################
+zuul:
+  prefix: /faraway                                      #前缀
+  ignored-services: "*"                                 #隐藏所有真实服务名字，跳过网关无法访问，只能通过网关访问
+  routes:
+    dept-ribbon:                                        #(哪个服务的)随便起
+      serviceId: eureka-consumer-dept-ribbonAddHystrix  #真实服务名
+      path: /myribbon/**                                #真实服务的映射地址
+    dept-feign:
+      serviceId: eureka-consumer-dept-feignAddHystrix
+      path: /myfeign/**

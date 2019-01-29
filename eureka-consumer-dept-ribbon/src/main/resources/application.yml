@@ -1,0 +1,11 @@
+server:
+  port: 9006
+#################################################
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:9001/eureka/
+#################################################
+spring:
+  application:
+    name: eureka-consumer-dept-ribbon
