@@ -16,6 +16,7 @@
         <module>eureka-consumer-dept-ribbonAddHystrix</module>
         <module>eureka-consumer-dept-feignAddHystrix</module>
         <module>zuul-gateway</module>
+        <module>eureka-consumer-dept-feignAddSentinel</module>
     </modules>
     <packaging>pom</packaging>
 

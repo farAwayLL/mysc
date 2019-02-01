@@ -1,0 +1,21 @@
+server:
+  port: 9017
+#####################################################
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:9001/eureka/
+#####################################################
+spring:
+  application:
+    name: eureka-consumer-dept-feignAddHystrix
+#####################################################
+#feign:
+  #hystrix:
+    #enabled: true #Feign是自带断路器的，在D版本的SpringCloud之后，它没有默认打开，这里将其打开
+
+#####################################################
+#hystrix改成阿里sentinel 修改一：在pom中添加sentinel依赖；修改二：注释掉上面，修改成如下所示即可
+feign:
+  sentinel:
+    enabled: true
